@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ePub builder</title>
+    <link rel="stylesheet" href="assets/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/main.css">
+    <style>
+        main {
+            max-width: 720px !important;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-sortablejs@latest/jquery-sortable.js"></script>
+    <script src="https://unpkg.com/jszip/dist/jszip.min.js"></script>
+    <script src="https://unpkg.com/ejs/ejs.min.js"></script>
+    <script src="https://unpkg.com/file-saver/dist/FileSaver.min.js"></script>
+    <script src="assets/jepub.js"></script>
+</head>
+<body class="bg-light" id="top">
+    <main class="container">
+        <div class="py-5">
+            <h2>ePub builder</h2>
+        </div>
+        <form id="epub-form" action="" autocomplete="off">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="frm-name" class="form-label">Name</label>
+                        <input name="name" type="text" class="form-control" id="frm-name">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="frm-author" class="form-label">Author</label>
+                        <input name="author" type="text" class="form-control" id="frm-author">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="files" class="form-label">Chapter files (html)</label>
+                    <input name="" type="file" multiple class="form-control" id="files" accept="text/html">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="frm-tags" class="form-label">Tags (comma separated)</label>
+                        <input name="tags" type="text" class="form-control" id="frm-tags">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-end">
+                    <button type="button" id="clear" class="btn btn-secondary">Clear</button>
+                    <button type="submit" id="generate" class="btn btn-primary">Generate</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <hr class="mb-4 mt-4">
+                  <ol id="chapters" class="list-group mb-3">
+                    <!--li class="list-group-item"></li-->
+                  </ol>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+#chapters {
+	list-style: decimal inside;
+}
+
+#chapters .list-group-item {
+	display: list-item;
+	cursor: move;
+}
+#chapters .list-group-item:hover {
+	background: #eee;
+}
+#chapters .list-group-item::marker {
+	color: #999;
+}
