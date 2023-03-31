@@ -23,13 +23,18 @@
     <main class="container">
         <div class="pt-5 pb-3">
             <h2>ePub builder</h2>
-            <p class="text-muted">The ePub file is generated directly in your browser, there is no server upload. You need a modern browser to use this. You can check the source code at <a href="https://github.com/keksa/epub-builder/tree/gh-pages" target="_blank">GitHub</a>.</p>
+            <p class="text-muted">
+                The ePub file is generated directly in your browser, there is no server upload.
+                You need a modern browser to use this.
+                You can check the source code at <a href="https://github.com/keksa/epub-builder/tree/gh-pages"
+                                                    target="_blank">GitHub</a>.
+            </p>
         </div>
-        <form id="epub-form" action="" autocomplete="off">
+        <form id="epub-form" action="">
             <div class="row">
                 <div class="col-md-6">
                     <div class="mb-3">
-                        <label for="frm-name" class="form-label">Name</label>
+                        <label for="frm-name" class="form-label">Title</label>
                         <input name="name" type="text" class="form-control" id="frm-name">
                     </div>
                 </div>
@@ -42,10 +47,10 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
-                  <div class="mb-3">
-                    <label for="files" class="form-label">Chapter files (html)</label>
-                    <input name="" type="file" multiple class="form-control" id="files" accept="text/html">
-                  </div>
+                    <div class="mb-3">
+                        <label for="files" class="form-label">Chapter files (html)</label>
+                        <input name="" type="file" multiple class="form-control" id="files" accept="text/html" autocomplete="off">
+                    </div>
                 </div>
                 <div class="col-md-6">
                     <div class="mb-3">
@@ -55,7 +60,20 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6"></div>
+                <div class="col-md-6 d-flex align-items-center">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="frm-autofill-title" checked>
+                        <label class="form-check-label" for="frm-autofill-title" title="book title will be autofilled from the name of first chapter file">
+                            autofill title
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="frm-append-chapters">
+                        <label class="form-check-label" for="frm-append-chapters" title="append chapters to already uploaded, instead of clearing the existing ones first">
+                            append chapters
+                        </label>
+                    </div>
+                </div>
                 <div class="col-md-6 text-end">
                     <button type="button" id="clear" class="btn btn-secondary">Clear</button>
                     <button type="submit" id="generate" class="btn btn-primary">Generate</button>
@@ -63,14 +81,14 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <hr class="mb-4 mt-4">
-                  <ol id="chapters" class="list-group mb-3">
-                    <!--li class="list-group-item"></li-->
-                  </ol>
+                    <hr class="mb-4 mt-4 d-none" id="chapters-separator">
+                    <ol id="chapters" class="list-group mb-3">
+                        <!--li class="list-group-item"></li-->
+                    </ol>
                 </div>
             </div>
         </form>
-    </div>
+    </main>
 
     <script src="assets/main.js"></script>
 </body>
